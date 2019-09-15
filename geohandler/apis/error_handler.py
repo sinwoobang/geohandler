@@ -11,26 +11,26 @@ class ErrorNotFoundAPI(View):
     methods = ['GET']
 
     def dispatch_request(self):
-        raise abort(404)
+        raise abort(http.HTTPStatus.NOT_FOUND)
 
 
 class ErrorMethodNotAllowedAPI(View):
     methods = ['GET']
 
     def dispatch_request(self):
-        raise abort(405)
+        raise abort(http.HTTPStatus.METHOD_NOT_ALLOWED)
 
 
 class ErrorInternalServerError(View):
     methods = ['GET']
 
     def dispatch_request(self):
-        raise abort(500)
+        raise abort(http.HTTPStatus.INTERNAL_SERVER_ERROR)
 
 
 api_error_bp.add_url_rule('/notfound', view_func=ErrorNotFoundAPI.as_view('api_error_not_found'))
-api_error_bp.add_url_rule('/methodnotallowed', view_func=ErrorNotFoundAPI.as_view('api_error_method_not_allowed'))
-api_error_bp.add_url_rule('/internalservererror', view_func=ErrorNotFoundAPI.as_view('api_error_internal_server_error'))  # noqa
+api_error_bp.add_url_rule('/methodnotallowed', view_func=ErrorMethodNotAllowedAPI.as_view('api_error_method_not_allowed'))  # noqa
+api_error_bp.add_url_rule('/internalservererror', view_func=ErrorInternalServerError.as_view('api_error_internal_server_error'))  # noqa
 
 
 def handle_not_found(e):
