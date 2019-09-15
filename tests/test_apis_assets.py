@@ -37,7 +37,7 @@ def test_assets_id(client: FlaskClient):
     assert res.json['code'] == http.HTTPStatus.OK
 
     res = client.post(url)
-    assert res.status_code == http.HTTPStatus.METHOD_NOT_ALLOWED  # Method Not Allowed
+    assert res.json['code'] == http.HTTPStatus.METHOD_NOT_ALLOWED  # Method Not Allowed
 
     res = client.put(url)
     assert res.json['code'] == http.HTTPStatus.OK
