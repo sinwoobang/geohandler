@@ -1,9 +1,6 @@
 # geohandler
-(Toy Project) Geospatial data handler
+Flask App copied [Steerpath API](https://meta2.eu.steerpath.com/meta/v2/ui/#/default)
 
-### Technical Goals
-- [ ] REST API with Flask (focused on realtime handling)
-- [ ] MongoDB
-- [ ] GraphQL
-- [ ] GeoJSON
-- [ ] ElasticBeanstalk
+### Used
+- [o] REST API with Flask(only tried structures so it doesn't work)
+- [o] Test with pytest, coverage
