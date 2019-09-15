@@ -11,7 +11,9 @@ def create_app(config: Type[Config]) -> Flask:
 
     # Add Blueprints
     from geohandler.apis.health import api_health_bp
+    from geohandler.apis.meta.assets import api_meta_assets_bp
     app.register_blueprint(api_health_bp)
+    app.register_blueprint(api_meta_assets_bp)
 
     app.config.from_object(config)
     return app
