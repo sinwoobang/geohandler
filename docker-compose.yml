@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    container_name: flask
+    networks:
+      - nginx_network
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+  nginx:
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - nginx_network
+    depends_on:
+      - web
+networks:
+  nginx_network:
+    driver: bridge
