@@ -1,3 +1,3 @@
 # How to be organized
-- __init__.py : creates Flask app.
-- apis/: implements API.
+- \_\_init\_\_.py : creates Flask app.
+- apis: implements API.
