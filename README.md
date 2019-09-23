@@ -1,7 +1,12 @@
 # geohandler
-Flask App that handles Geospatial Data based on [Steerpath API](https://meta2.eu.steerpath.com/meta/v2/ui/#/default)
+Flask App that handles Geospatial Data
 
 [![CircleCI](https://circleci.com/gh/sinwoobang/geohandler.svg?style=svg)](https://circleci.com/gh/sinwoobang/geohandler)
+
+## Goal
+- Remind how to make a structrue of Flask from the bottom
+- Try to dockerize most of things for Web Application
+- Try to use geojson
 
 ## Used
 - REST API with Flask(**only tried structures** so it doesn't work like a real one)
@@ -36,3 +41,6 @@ pytest
 ```bash
 pre-commit
 ```
+
+### Reference
+- Steerpath API
